@@ -5,3 +5,7 @@ venv
 *.pyc
 *.log
 poetry.lock
+/tests/.pytest_cache/
+/.coverage
+/.pytest_cache/
+/htmlcov/
