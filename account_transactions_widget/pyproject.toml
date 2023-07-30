@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "account-transactions-widget"
+version = "0.1.0"
+description = ""
+authors = ["Andrey Zhirkov <zhirkov.arty@gmail.com>"]
+readme = "README.md"
+packages = [{include = "account_transactions_widget"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+setuptools = "^68.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
