@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import datetime
 
 
 def get_file_data(file_name):
@@ -20,14 +21,14 @@ def get_executed_operations(file_data):
 
 def get_last_5_operations(operations):
     """Функция получения 5 последних операций отсортированных по дате"""
-    operations_sorted_by_date = sorted(operations, key=lambda key: key['date'])
-    return operations_sorted_by_date[-5:][::-1]
+    operations_sorted_by_date = sorted(operations, key=lambda key: key['date'], reverse=True)[:5]
+    return operations_sorted_by_date
 
 
 def format_date(date):
     """Функция возвращает дату операции в формате 'DD.MM.YYYY'"""
-    operation_date = date[:10]
-    formatted_date = operation_date[-2:] + '.' + operation_date[5:7] + '.' + operation_date[:4]
+    date_object = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%f")
+    formatted_date = date_object.strftime("%d.%m.%Y")
     return formatted_date
 
 
