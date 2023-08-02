@@ -1,3 +1,4 @@
+import pytest
 from account_transactions_widget.src import utils
 
 
@@ -45,3 +46,7 @@ def test_display_operation(capsys, operations_fixture):
                             'Открытие нового счета -> Счет **6215\n'
                             '79931.03 руб.\n'
                             '\n')
+
+
+if __name__ == "__main__":
+    pytest.main()
